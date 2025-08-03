@@ -3,7 +3,7 @@ import pandas as pd
 from datetime import datetime
 import os
 
-# 🧠 Função 1 - Obter dados da API SIDRA
+#  Função 1 - Obter dados da API SIDRA
 def obter_dados_ipca():
     """
     Faz requisição à API do IBGE para obter dados do IPCA.
@@ -17,7 +17,7 @@ def obter_dados_ipca():
     else:
         raise Exception(f"Erro ao acessar a API: {resposta.status_code}")
 
-# 🔍 Função 2 - Processar os dados recebidos e transformá-los em DataFrame
+#  Função 2 - Processar os dados recebidos e transformá-los em DataFrame
 def transformar_para_tabela(json_dados):
     """
     Extrai os períodos liberados do IPCA e converte em DataFrame.
@@ -42,7 +42,7 @@ def transformar_para_tabela(json_dados):
     df = pd.DataFrame(dados_formatados)
     return df
 
-# 📦 Função 3 - Exportar para arquivo parquet
+#  Função 3 - Exportar para arquivo parquet
 def exportar_para_parquet(df, caminho="ipca_periodos.parquet"):
     """
     Exporta o DataFrame gerado para o formato Parquet.
@@ -50,7 +50,7 @@ def exportar_para_parquet(df, caminho="ipca_periodos.parquet"):
     df.to_parquet(caminho, index=False)
     print(f"✅ Arquivo exportado como: {caminho}")
 
-# 🚀 Execução principal do bot
+#  Execução principal do bot
 def rodar_bot_ipca():
     """
     Executa todas as etapas do robô de coleta IPCA:
@@ -67,6 +67,6 @@ def rodar_bot_ipca():
     print("📁 Salvando arquivo Parquet...")
     exportar_para_parquet(tabela_ipca)
 
-# 🏁 Rodando o bot
+#  Rodando o bot
 if __name__ == "__main__":
     rodar_bot_ipca()
