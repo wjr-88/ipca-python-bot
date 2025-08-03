@@ -1,0 +1,20 @@
+Solução proposta para captura de dados em sites sem link direto
+
+Quando o arquivo de dados desejado exige navegação prévia por menus, logins e cliques em botões, a simples requisição HTTP via requests não é suficiente. 
+Nesse cenário, propomos como solução o uso de uma técnica chamada automação de navegação web (web scraping dinâmico) utilizando a biblioteca Selenium.
+
+A automação simula a interação humana com o navegador, permitindo navegar por menus, realizar login (com credenciais programadas), clicar em botões e aguardar carregamentos até o acesso ao arquivo alvo.
+
+Etapas da proposta:
+1. Definir o site de origem e mapear o caminho até o arquivo (menus, campos de login, botões).
+2. Utilizar a biblioteca Selenium com o driver de navegador (ex: ChromeDriver).
+3. Programar os passos de navegação (login, clique em menus, acesso ao botão de download).
+4. Capturar o link final do arquivo ou fazer o download diretamente via Selenium.
+5. Armazenar o arquivo localmente e seguir com o processamento (como no bot original).
+
+Essa solução é robusta e replicável para diversos sites, sendo ideal quando o acesso ao dado não é direto via URL estática.
+
+Caso o site possua mecanismos de proteção como CAPTCHAs ou autenticação por tokens temporários, 
+será necessário avaliar abordagens adicionais como utilização de APIs internas (quando disponíveis) ou autenticação por sessão armazenada.
+
+Com essa abordagem o bot se torna mais versátil e capaz de operar em ambientes com maior complexidade de navegação.
